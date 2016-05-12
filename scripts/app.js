@@ -74,18 +74,7 @@ $(document).on("ready", function() {
 
       }
 
-
-
-
-
-
-
-
-
-
-
-      //
       // Handlebars.registerHelper('hoursAgo', function(time) {
-      //     var hoursAgo = Math.round((Date.now() - time) / (1000*60*60));
-      //     return hoursAgo + ' hours ago';
-      //   });
+      //      var hoursAgo = Math.round((Date.now() - time)/(1000*60*60));
+      //      return hoursAgo + ' hours ago';
+      //    });
