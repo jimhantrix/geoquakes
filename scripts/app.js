@@ -40,7 +40,7 @@ $(document).on("ready", function() {
  function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 37.78, lng: -122.44},
-          zoom: 2
+          zoom: 4
         });
 
         var marker = new google.maps.Marker({
@@ -50,11 +50,42 @@ $(document).on("ready", function() {
         });
       }
 
+      function drop() {
+        clearMarkers();
+        for (var i = 0; i<position.length; i++) {
+          addMarkerWithTimeout(title[i], i * 200);
+        }
+      }
 
-      function getTime() {
+      function addMarkerWithTimeout(position, title) {
+        window.setTimeout(function() {
+          markers.push(new google.maps.Marker({
+            position:{lat: 37.78, lng: -122.44},
+            map: map,
+            animation: google.maps.Animation.DROP
+          }));
+        }, timeout);
+      }
+
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
 
       }
 
 
 
-      
+
+
+
+
+
+
+
+
+      //
+      // Handlebars.registerHelper('hoursAgo', function(time) {
+      //     var hoursAgo = Math.round((Date.now() - time) / (1000*60*60));
+      //     return hoursAgo + ' hours ago';
+      //   });
